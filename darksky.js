@@ -9,7 +9,7 @@ var getWeather = (address, callback) => {
 		}, (error, response, body) => {
 			if (error) {
 				callback('Cannot connect to Dark Sky')
-			} else if (body.currently.summary === undefined) {
+			} else if (body === undefined) {
 				callback("Cannot find requested location")
 			} else {
 				var array = [JSON.stringify(body.currently.summary), body.currently.icon]
